@@ -51,7 +51,7 @@ class PostCSSCompiler {
 		this.modules = !!this.config.modules;
 	}
 
-	optimize(file) {
+	compile(file) {
 		const path = file.path;
 		const opts = {from: path, to: sysPath.basename(path), map: this.map};
 
@@ -93,7 +93,7 @@ class PostCSSCompiler {
 Object.assign(PostCSSCompiler.prototype, {
 	brunchPlugin: true,
 	type: 'stylesheet',
-	defaultEnv: '*',
+	extension: 'css',
 });
 
 module.exports = PostCSSCompiler;
